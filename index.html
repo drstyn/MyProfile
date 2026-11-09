@@ -1,0 +1,949 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Yuli Dwi Restiyana | Personal Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
+    <style>
+
+        /* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #081b29;
+            color: #ededed;
+        }
+
+        /* NAVBAR */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 15px 8%;
+            background: #081b29;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            z-index: 100;
+            border-bottom: 1px solid #00eeff;
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #ededed;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 10px 22px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .navbar a:hover,
+        .navbar a.active {
+            color: #00eeff;
+            background: rgba(0, 238, 255, 0.12);
+        }
+
+        /* HOME SECTION */
+        .home {
+            min-height: 100vh;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 100px 14.4% 50px;
+            gap: 50px;
+            background: linear-gradient(
+                135deg,
+                #081b29,
+                #073442,
+                #081b29
+            );
+        }
+
+        /* HOME CONTENT */
+        .home-content {
+            max-width: 650px;
+        }
+
+        .home-content h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 3px;
+        }
+
+        .home-content h1 {
+            font-size: 42px;
+            font-weight: 800;
+            line-height: 1.3;
+            margin-bottom: 5px;
+            background: linear-gradient(
+                90deg,
+                #ededed,
+                #00eeff
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .home-content p {
+            font-size: 16px;
+            line-height: 1.7;
+            margin-top: 5px;
+        }
+
+        /* SOCIAL MEDIA */
+        .social-media {
+            display: flex;
+            gap: 18px;
+            margin: 35px 0 22px;
+        }
+
+        .social-media a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 51px;
+            height: 51px;
+            border: 2px solid #00eeff;
+            border-radius: 50%;
+            color: #00eeff;
+            text-decoration: none;
+            font-size: 21px;
+            transition: 0.3s;
+        }
+
+        .social-media a:hover {
+            background: #00eeff;
+            color: #081b29;
+            box-shadow: 0 0 20px #00eeff;
+            transform: translateY(-5px);
+        }
+
+        /* BUTTON */
+        .btn {
+            display: inline-block;
+            padding: 14px 35px;
+            background: #00eeff;
+            color: #081b29;
+            text-decoration: none;
+            border-radius: 40px;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            box-shadow: 0 0 20px rgba(0, 238, 255, 0.5);
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            box-shadow: 0 0 30px #00eeff;
+            transform: scale(1.05);
+        }
+
+        /* PROFILE IMAGE */
+        .home-img {
+            width: 310px;
+            height: 310px;
+            flex-shrink: 0;
+            border-radius: 50%;
+            border: 4px solid #00eeff;
+            overflow: hidden;
+            box-shadow:
+                0 0 20px #00eeff,
+                0 0 50px rgba(0, 238, 255, 0.6);
+            animation: floating 4s ease-in-out infinite;
+        }
+
+        .home-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        /* IMAGE ANIMATION */
+        @keyframes floating {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        /* RESPONSIVE TABLET */
+        @media (max-width: 1000px) {
+
+            .home {
+                padding: 120px 8% 50px;
+            }
+
+            .home-content h1 {
+                font-size: 34px;
+            }
+
+            .home-img {
+                width: 260px;
+                height: 260px;
+            }
+
+            .navbar {
+                gap: 5px;
+            }
+
+            .navbar a {
+                padding: 10px;
+                font-size: 13px;
+            }
+        }
+
+        /* RESPONSIVE MOBILE */
+        @media (max-width: 768px) {
+
+            .header {
+                justify-content: center;
+                padding: 12px 3%;
+            }
+
+            .navbar {
+                gap: 3px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .navbar a {
+                font-size: 11px;
+                padding: 8px;
+            }
+
+            .home {
+                flex-direction: column-reverse;
+                justify-content: center;
+                text-align: center;
+                padding: 130px 7% 50px;
+                gap: 35px;
+            }
+
+            .home-content h3 {
+                font-size: 20px;
+            }
+
+            .home-content h1 {
+                font-size: 30px;
+            }
+
+            .home-content p {
+                font-size: 14px;
+            }
+
+            .home-img {
+                width: 220px;
+                height: 220px;
+            }
+
+            .social-media {
+                justify-content: center;
+                margin: 25px 0;
+            }
+
+            .btn {
+                font-size: 14px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- ABOUT SECTION -->
+
+<section class="about" id="about">
+
+    <!-- FOTO PROFIL -->
+    <div class="about-img">
+
+        <img src="foto-profil.jpg"
+             alt="Foto Yuli Dwi Restiyana">
+
+    </div>
+
+    <!-- DESKRIPSI DIRI -->
+    <div class="about-content">
+
+        <h2>About <span>Me</span></h2>
+
+        <p>
+            I am an undergraduate Computer Science student
+            at Universitas Muhammadiyah A.R. Fachruddin.
+            I have a strong interest in technology,
+            programming, and digital innovation.
+        </p>
+
+        <p>
+            I enjoy learning about web development,
+            database management, and artificial intelligence.
+            Through academic projects and independent learning,
+            I continue to develop my technical skills
+            and problem-solving abilities.
+        </p>
+
+        <p>
+            I am also interested in developing technology-based
+            solutions, particularly projects that combine
+            programming, Internet of Things (IoT), and
+            artificial intelligence.
+        </p>
+
+        <p>
+            I believe that continuous learning,
+            creativity, and collaboration are important
+            parts of personal and professional growth.
+        </p>
+
+        <a href="#skills" class="btn">
+            Explore My Skills
+        </a>
+
+    </div>
+
+</section>
+
+<!-- SKILLS SECTION -->
+
+<section class="skills" id="skills">
+
+    <div class="skills-title">
+        <h2>My <span>Skills</span></h2>
+        <div class="title-line"></div>
+    </div>
+
+    <div class="skills-container">
+
+        <!-- TECHNICAL SKILLS -->
+        <div class="technical-skills">
+
+            <h3>Technical Skills</h3>
+
+            <div class="skill-item">
+
+                <div class="skill-info">
+                    <i class="fa-brands fa-html5 html-icon"></i>
+                    <span>HTML</span>
+                </div>
+
+                <div class="progress-bar">
+                    <div class="progress html">
+                        <span>65%</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="skill-item">
+
+                <div class="skill-info">
+                    <i class="fa-brands fa-css3-alt css-icon"></i>
+                    <span>CSS</span>
+                </div>
+
+                <div class="progress-bar">
+                    <div class="progress css">
+                        <span>55%</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="skill-item">
+
+                <div class="skill-info">
+                    <i class="fa-brands fa-js js-icon"></i>
+                    <span>JavaScript</span>
+                </div>
+
+                <div class="progress-bar">
+                    <div class="progress javascript">
+                        <span>35%</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="skill-item">
+
+                <div class="skill-info">
+                    <i class="fa-brands fa-python python-icon"></i>
+                    <span>Python</span>
+                </div>
+
+                <div class="progress-bar">
+                    <div class="progress python">
+                        <span>65%</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="skill-item">
+
+                <div class="skill-info">
+                    <i class="fa-solid fa-database database-icon"></i>
+                    <span>Database / SQL</span>
+                </div>
+
+                <div class="progress-bar">
+                    <div class="progress database">
+                        <span>50%</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="skill-item">
+
+                <div class="skill-info">
+                    <i class="fa-solid fa-microchip iot-icon"></i>
+                    <span>IoT & Artificial Intelligence</span>
+                </div>
+
+                <div class="progress-bar">
+                    <div class="progress iot">
+                        <span>50%</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- CERTIFICATIONS -->
+        <div class="certifications">
+
+            <h3>Sertifikasi & Pencapaian</h3>
+
+            <div class="certificate-list">
+
+                <div class="certificate-item">
+                    <i class="fa-solid fa-award"></i>
+                    <div>
+                        <h4>Sertifikasi Kepanitia</h4>
+                        <p>Seminar dan Pagelaran IoT HIMALKOM 2026</p>
+                        <p>Seminar Kolaborasi Prodi dan HIMALKOM 2026</p>
+                        <p>Workshop Panel Surya 2026</p>
+                        <p>MAKRAB HIMALKOM 2026</p>
+                        
+                    </div>
+                </div>
+
+                <div class="certificate-item">
+                    <i class="fa-solid fa-certificate"></i>
+                    <div>
+                        <h4>Peserta Kegiatan</h4>
+                        <p>Workshop " Peran Iot dalam mengoptimalkan operasional dan rantao posok bisnis non-fuel retail" 2025</p>
+                        <p>Seminar Nasional Banten Festival Teknologi 2026</p>
+                        <p>1st SMART International Conference 2026</p>
+                        <p>MAKRAB Ormawa dan UKM UNIMAR 2026</p>
+                        <p>Baca Puisi Nasional 2026</p>
+                        
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- EXPERIENCE SECTION -->
+
+<section class="experience" id="experience">
+
+    <div class="experience-title">
+        <h2>My <span>Experience</span></h2>
+        <div class="title-line"></div>
+        <p>My journey in technology, innovation, and organization.</p>
+    </div>
+
+    <div class="experience-container">
+
+        <!-- EXPERIENCE 1 -->
+        <div class="experience-card">
+
+            <div class="experience-icon">
+                <i class="fa-solid fa-microchip"></i>
+            </div>
+
+            <div class="experience-content">
+
+                <span class="experience-date">
+                    2026 | Academic Project
+                </span>
+
+                <h3>Smart Plant Watering (SPW)</h3>
+
+                <h4>IoT & Technology Development</h4>
+
+                <p>
+                    Developing an IoT-based plant monitoring and
+                    automatic watering system integrated with a
+                    chatbot. This project combines ESP32,
+                    environmental sensors, Firebase, and automated
+                    pump control to support smart plant care.
+                </p>
+
+                <div class="experience-tags">
+                    <span>IoT</span>
+                    <span>ESP32</span>
+                    <span>Python</span>
+                    <span>Firebase</span>
+                    <span>Chatbot</span>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- EXPERIENCE 2 -->
+        <div class="experience-card">
+
+            <div class="experience-icon">
+                <i class="fa-solid fa-lightbulb"></i>
+            </div>
+
+            <div class="experience-content">
+
+                <span class="experience-date">
+                    2026 | Innovation Project
+                </span>
+
+                <h3>Pra-Startup Innovation Project</h3>
+
+                <h4>Student Innovation Competition</h4>
+
+                <p>
+                    Developing an innovative technology-based
+                    project in the food sector. The project focuses
+                    on creating practical solutions through IoT
+                    technology, automation, and digital innovation.
+                </p>
+
+                <div class="experience-tags">
+                    <span>Innovation</span>
+                    <span>Research</span>
+                    <span>IoT</span>
+                    <span>Teamwork</span>
+                </div>
+
+            </div>
+        </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PORTFOLIO SECTION -->
+
+<section class="portfolio" id="portfolio">
+
+    <div class="portfolio-title">
+        <h2>My <span>Portfolio</span></h2>
+        <div class="title-line"></div>
+        <p>Some of my projects and creative works.</p>
+    </div>
+
+    <div class="portfolio-container">
+
+        <!-- PROJECT 1 -->
+        <div class="portfolio-card">
+
+            <div class="portfolio-image spw-image">
+                <i class="fa-solid fa-seedling"></i>
+                <span>IoT Project</span>
+            </div>
+
+            <div class="portfolio-content">
+
+                <h3>Smart Plant Watering</h3>
+
+                <p>
+                    An IoT-based plant monitoring and automatic
+                    watering system integrated with a chatbot
+                    to support smart plant care.
+                </p>
+
+                <div class="portfolio-tags">
+                    <span>IoT</span>
+                    <span>ESP32</span>
+                    <span>Firebase</span>
+                    <span>Chatbot</span>
+                </div>
+
+                <a href="#contact" class="portfolio-btn">
+                    Discuss Project
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+        </div>
+
+
+        <!-- PROJECT 2 -->
+        <div class="portfolio-card">
+
+            <div class="portfolio-image tanicek-image">
+                <i class="fa-solid fa-leaf"></i>
+                <span>AI Project</span>
+            </div>
+
+            <div class="portfolio-content">
+
+                <h3>TaniCek</h3>
+
+                <p>
+                    An AI-based plant assistance concept
+                    designed to explore plant identification
+                    and leaf condition detection through images.
+                </p>
+
+                <div class="portfolio-tags">
+                    <span>Python</span>
+                    <span>AI</span>
+                    <span>Machine Learning</span>
+                    <span>Streamlit</span>
+                </div>
+
+                <a href="#contact" class="portfolio-btn">
+                    Discuss Project
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+        </div>
+
+
+        <!-- PROJECT 3 -->
+        <div class="portfolio-card">
+
+            <div class="portfolio-image website-image">
+                <i class="fa-solid fa-laptop-code"></i>
+                <span>Web Development</span>
+            </div>
+
+            <div class="portfolio-content">
+
+                <h3>Personal Website Portfolio</h3>
+
+                <p>
+                    A personal website developed to introduce
+                    my background, technical skills, experiences,
+                    and projects in a professional way.
+                </p>
+
+                <div class="portfolio-tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>Web Design</span>
+                </div>
+
+                <a href="#contact" class="portfolio-btn">
+                    Discuss Project
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT SECTION -->
+
+<section class="contact" id="contact">
+
+    <div class="contact-title">
+        <h2>Contact <span>Me</span></h2>
+        <div class="title-line"></div>
+        <p>Let's connect and create something meaningful together.</p>
+    </div>
+
+    <div class="contact-container">
+
+        <!-- CONTACT INFORMATION -->
+        <div class="contact-info">
+
+            <h3>Let's Talk!</h3>
+
+            <p>
+                Feel free to contact me for collaboration,
+                project opportunities, or just to say hello.
+                I'm always open to learning and connecting
+                with new people.
+            </p>
+
+            
+<!-- EMAIL -->
+<div class="contact-item">
+    <a href="mailto:rstynyulidwi@gmail.com">
+        <i class="fa-solid fa-envelope"></i>
+    </a>
+    <div>
+        <h4>Email</h4>
+        <a href="mailto:rstynyulidwi@gmail.com">
+            rstynyulidwi@gmail.com
+        </a>
+    </div>
+</div>
+
+<!-- LINKEDIN -->
+<div class="contact-item">
+    <a href="https://www.linkedin.com/in/yuli-dwi-restiyana-6a97092ab?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+       target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-linkedin"></i>
+    </a>
+    <div>
+        <h4>LinkedIn</h4>
+        <a href="https://www.linkedin.com/in/yuli-dwi-restiyana-6a97092ab?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+           target="_blank" rel="noopener noreferrer">
+            Yuli Dwi Restiyana
+        </a>
+    </div>
+</div>
+
+<!-- YOUTUBE -->
+<div class="contact-item">
+    <a href="https://www.youtube.com/@RuangEdu101"
+       target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-youtube"></i>
+    </a>
+    <div>
+        <h4>YouTube</h4>
+        <a href="https://www.youtube.com/@RuangEdu101"
+           target="_blank" rel="noopener noreferrer">
+            @RuangEdu101
+        </a>
+    </div>
+</div>
+
+<!-- INSTAGRAM -->
+<div class="contact-item">
+    <a href="https://www.instagram.com/drstynnn_/?rpxt=MXQ5a2MwMXpkNWdxZQ=="
+       target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-instagram"></i>
+    </a>
+    <div>
+        <h4>Instagram</h4>
+        <a href="https://www.instagram.com/drstynnn_/?rpxt=MXQ5a2MwMXpkNWdxZQ=="
+           target="_blank" rel="noopener noreferrer">
+            @drstynnn_
+        </a>
+    </div>
+</div>
+
+
+           
+
+
+        <!-- CONTACT FORM -->
+        <div class="contact-form">
+
+            <h3>Send Me a Message</h3>
+
+            <form id="contactForm">
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Your Name"
+                    required
+                >
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Your Email"
+                    required
+                >
+
+                <input
+                    type="text"
+                    id="subject"
+                    placeholder="Subject"
+                    required
+                >
+
+                <textarea
+                    id="message"
+                    rows="6"
+                    placeholder="Your Message"
+                    required
+                ></textarea>
+
+                <button type="submit" class="contact-btn">
+                    Send Message
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <p>
+        Copyright &copy; 2026 Yuli Dwi Restiyana.
+        All Rights Reserved.
+    </p>
+
+    <a href="#home" class="back-to-top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+
+</footer>
+
+
+
+
+
+<script>
+    const navLinks = document.querySelectorAll('.navbar a');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            navLinks.forEach(item =>
+                item.classList.remove('active')
+            );
+
+            this.classList.add('active');
+        });
+    });
+</script>
+
+    <!-- NAVBAR -->
+    <header class="header">
+
+        <nav class="navbar">
+
+            <a href="#home" class="active">HOME</a>
+
+            <a href="#about">ABOUT</a>
+
+            <a href="#skills">SKILLS</a>
+
+            <a href="#experience">EXPERIENCE</a>
+
+            <a href="#portfolio">PORTFOLIO</a>
+
+            <a href="#contact">CONTACT</a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- HOME SECTION -->
+    <section class="home" id="home">
+
+        <!-- INTRODUCTION -->
+        <div class="home-content">
+
+            <h3>Hello, It's Me</h3>
+
+            <h1>YULI DWI RESTIYANA</h1>
+
+            <p>
+                I am an undergraduate Computer Science student
+                at Universitas Muhammadiyah A.R. Fachruddin.
+                Passionate about technology, programming,
+                and creative innovation.
+            </p>
+
+<div class="social-media">
+    <!-- Instagram -->
+    <a href="https://www.instagram.com/drstynnn_/?rpxt=MXQ5a2MwMXpkNWdxZQ==" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-instagram"></i>
+    </a>
+
+    <!-- LinkedIn -->
+    <a href="https://www.linkedin.com/in/yuli-dwi-restiyana-6a97092ab?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-linkedin-in"></i>
+    </a>
+
+    <!-- YouTube -->
+    <a href="https://www.youtube.com/@RuangEdu101" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-youtube"></i>
+    </a>
+</div>
+
+
+            <!-- BUTTON -->
+            <a href="#about" class="btn">
+                More About Me
+            </a>
+
+        </div>
+
+
+        <!-- PROFILE PHOTO -->
+        <div class="home-img">
+
+            <img src="foto-profil.jpg"
+                 alt="Foto Profil Yuli Dwi Restiyana">
+
+        </div>
+
+    </section>
+
+</body>
+</html>
